@@ -19,7 +19,7 @@ export module ES6DS {
                 var keysToReturn: Array<K> = [];
                 var valueToFind = value;
                 this.keyAndValues.forEach(function (value: KeyValuePair<K, V>, index: number, array: KeyValuePair<K, V>[]): void {
-                    if (value.value == valueToFind) {
+                    if (value.value === valueToFind) {
                         keysToReturn.push(value.key);
                     }
                 });
@@ -34,7 +34,7 @@ export module ES6DS {
                 var found = false;
                 this.keyAndValues.forEach(function (value: KeyValuePair<K, V>, index: number, array: KeyValuePair<K, V>[]): void {
                     if (found) return;
-                    if (key == value.key) {
+                    if (key === value.key) {
                         array = array.slice(0, index).concat(array.slice(index + 1));
                         found = true;
                     }
@@ -50,7 +50,7 @@ export module ES6DS {
                 var valueToReturn: V = undefined;
                 this.keyAndValues.forEach(function (value: KeyValuePair<K, V>, index: number, array: KeyValuePair<K, V>[]): void {
                     if (valueToReturn !== undefined) return;
-                    if (key == value.key) {
+                    if (key === value.key) {
                         valueToReturn = value.value;
                     }
                 });
@@ -60,7 +60,7 @@ export module ES6DS {
                 var found = false;
                 this.keyAndValues.forEach(function (value: KeyValuePair<K, V>, index: number, array: KeyValuePair<K, V>[]): void {
                     if (found) return;
-                    if (key == value.key) {
+                    if (key === value.key) {
                         found = true;
                     }
                 });
@@ -71,7 +71,7 @@ export module ES6DS {
                 var valueToSet = value;
                 this.keyAndValues.forEach(function (value: KeyValuePair<K, V>, index: number, array: KeyValuePair<K, V>[]): void {
                     if (found) return;
-                    if (key == value.key) {
+                    if (key === value.key) {
                         found = true;
                         value.value = valueToSet;
                     }
@@ -89,4 +89,4 @@ export module ES6DS {
                 return this.keyAndValues.length;
             }
         }
-    }
+}
